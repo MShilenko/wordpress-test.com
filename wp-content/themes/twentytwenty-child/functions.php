@@ -15,8 +15,7 @@ register_meta( 'post, page', 'seo_keywords', [
 		return wp_strip_all_tags( $meta_value ); // delete html tags
 	},
 	'auth_callback'     => function( $false, $meta_key, $postID, $user_id, $cap, $caps ){
-		// only admin can write
-		return current_user_can('manage_options');
+		return current_user_can('manage_options'); // only admin can write
 	},
 	'show_in_rest'      => false,
 ] );
